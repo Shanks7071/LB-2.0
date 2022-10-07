@@ -15,28 +15,28 @@
 
 int minOps(string& A, string& B)
 {
-    int m = A.length(), n = B.length();
-
-    // This parts checks whether conversion is
-    // possible or not
-    if (n != m)
-        return -1;
-    int count[256];
-    memset(count, 0, sizeof(count));
-    for (int i = 0; i < n; i++) // count characters in A
-        count[B[i]]++;
-    for (int i = 0; i < n; i++) // subtract count for
-        count[A[i]]--;		 // every character in B
-    for (int i = 0; i < 256; i++) // Check if all counts become 0
-        if (count[i])
-            return -1;
-
-        // This part calculates the number of operations required
-    int res = 0;
-    int i = n - 1, j = n - 1;
-
-    while (i >= 0)
+  void recur(vector<string>& ans, string s, int l, int r)
+{
+    // Base case
+    if (l == r) ans.push_back(s);
+    else
     {
+        // Permutations made
+        for (int i = l; i <= r; i++)
+        {
+
+            // Swapping done
+            swap(a[l], a[i]);
+
+            // Recursion called
+            permute(a, l + 1, r);
+
+            //backtrack
+            swap(a[l], a[i]);
+        }
+    }
+}
+
         // If there is a mismatch, then keep incrementing
         // result 'res' until B[j] is not found in A[0..i]
         while (i >= 0 && A[i] != B[j])
