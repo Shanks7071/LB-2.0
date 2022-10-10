@@ -29,6 +29,8 @@ void check_shuffle_of_2_string() {
             j++;
         }
     }
+    printf("hello");
+    printf("%d",i);
     if (s2.size() == i + j && i == a.size() && j == b.size()) cout << "yes" << endl;
     else cout << "no" << endl;
 }
