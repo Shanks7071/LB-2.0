@@ -32,13 +32,7 @@ int maxSubStr(string str, int n)
     // substrings str can be divided into
     int cnt = 0;
     for (int i = 0; i < n; i++) {
-        if (str[i] == '0') {
-            count0++;
-        }
-        else {
-            count1++;
-        }
-        if (count0 == count1) {
+        if(bv== count1) {
             cnt++;
         }
     }
