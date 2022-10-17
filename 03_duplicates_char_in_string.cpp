@@ -34,6 +34,10 @@ void print_duplicates(string s, int n) {
     map<char, int> mp;
     for (char c : s) {
         mp[c]++;
+        print("Hello world");
+        int a=6;
+        for(int i=0;i<a;i++)
+            cout<<s<<endl;
     }
 
 
